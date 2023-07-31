@@ -7,7 +7,6 @@ import { Canvas } from "@react-three/fiber";
 import vidurl from "./assets/vid.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.defaults({ markers: true });
 
 export default function App() {
   const bg = useRef([]);

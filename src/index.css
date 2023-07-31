@@ -1,0 +1,181 @@
+@font-face {
+  font-family: "hatton";
+  src: url("./assets/HattonBold.otf") format("opentype");
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "hatton";
+}
+:root {
+  --base-width: 1440;
+}
+@media (min-width: 1120px) {
+  :root {
+    --base-width: 1440;
+  }
+}
+
+
+
+@media (max-width: 960px) {
+  :root {
+    --base-width: 390;
+  }
+}
+
+@media (min-width: 1440px) and (min-height: 850px) {
+  :root {
+    --base-width: 1440;
+  }
+}
+
+@media (min-width: 1600px) and (min-height: 850px) {
+  :root {
+    --base-width: 1700;
+  }
+}
+
+@media (min-width: 768px) and (max-aspect-ratio: 1/1) {
+  :root {
+    --base-width: 600;
+  }
+}
+@media (max-height: 810px), (min-width: 1280px) {
+  :root {
+    --base-width: 1800;
+  }
+}
+.height {
+  height: calc(1vh * 100);
+}
+.grad {
+  background: linear-gradient(180deg, #bd6db0, #07184d);
+}
+.back-w {
+  display: none;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+.t-canvas {
+  height: calc(1vh * 100) !important;
+  left: 0;
+  position: fixed !important;
+  top: 0;
+  width: 100vw !important;
+  z-index: 10;
+}
+video {
+  object-fit: contain;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+.pages {
+  height: calc(1vh * 200);
+  position: relative;
+  opacity: 0;
+}
+.page {
+  font-size: calc(3200vw / var(--base-width));
+  letter-spacing: -0.03em;
+  line-height: 105%;
+  padding: 0 var(--gutter);
+}
+.pos {
+  bottom: calc(4000vw / var(--base-width));
+  color: #fff;
+  left: 0;
+  position: absolute;
+  z-index: 30;
+  bottom: auto;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.25));
+  opacity: 1;
+  perspective: 1000px;
+  top: calc(9000vw / var(--base-width));
+}
+.title {
+  letter-spacing: -0.03em;
+  line-height: 105%;
+  font-size: calc(3200vw / var(--base-width));
+  z-index: 40;
+}
+.title1 {
+  font-size: 15vw;
+  letter-spacing: -0.05em;
+  line-height: 110%;
+}
+@media (min-width: 960px) {
+  .pos {
+    bottom: auto;
+    left: calc(50% - 51650vw / var(--base-width) + 11300vw / var(--base-width));
+    margin: calc(-5000vw / var(--base-width)) 0 0;
+    padding: 0;
+    top: calc(50% - 32250vw / var(--base-width) + 3500vw / var(--base-width));
+    transform: translate(-50%);
+  }
+  .page {
+    margin-left: calc(10000vw / var(--base-width));
+    width: calc(70000vw / var(--base-width));
+    font-size: calc(4600vw / var(--base-width));
+    padding: 0;
+  }
+
+  .title {
+    font-size: calc(4600vw / var(--base-width));
+  }
+  .title1 {
+    font-size: calc(9400vw / var(--base-width));
+  }
+  .pages {
+    height: calc(1vh * 100);
+  }
+  .back-w {
+    display: block;
+  }
+  .t-canvas {
+    background: none;
+    height: calc(64500vw / var(--base-width)) !important;
+    left: 50%;
+    margin-left: calc(11300vw / var(--base-width));
+    margin-top: calc(6500vw / var(--base-width));
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(103300vw / var(--base-width)) !important;
+  }
+
+}
+
+.bimg {
+  background-position: 50%;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  will-change: opacity;
+  transition: 0.5s;
+}
+.active {
+  animation: fade 0.5s ease-in 0.1s;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(80px) translateZ(-100px) rotateX(-80deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) translateZ(0px) rotateX(0);
+  }
+}
+
